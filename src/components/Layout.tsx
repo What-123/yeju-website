@@ -27,15 +27,15 @@ function ScrollToTop() {
 
 export default function Layout() {
   return (
-    <div className="min-h-screen bg-[#f6f1e8] text-[#211c14] antialiased">
+    <div className="min-h-screen bg-[#f5f2ec] text-[#1a1815] antialiased">
       <ScrollToTop />
       {/* 顶部导航 */}
-      <header className="sticky top-0 z-50 border-b border-[#211c14]/10 bg-[#f6f1e8]/90 backdrop-blur">
+      <header className="sticky top-0 z-50 border-b border-[#b89b5e]/15 bg-[#0c0b09]/95 backdrop-blur">
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
           <Link to="/" className="flex items-baseline gap-2.5">
-            <span className="font-serif text-2xl font-bold tracking-[0.25em]">野居</span>
-            <span className="h-3 w-px bg-[#b06a28]/60" />
-            <span className="text-[10px] uppercase tracking-[0.35em] text-[#211c14]/50">
+            <span className="font-serif text-2xl font-bold tracking-[0.25em] text-[#f5f2ec]">野居</span>
+            <span className="h-3 w-px bg-[#b89b5e]/60" />
+            <span className="text-[10px] uppercase tracking-[0.35em] text-[#b89b5e]/70">
               Yeju Group
             </span>
           </Link>
@@ -48,8 +48,8 @@ export default function Layout() {
                 className={({ isActive }) =>
                   `text-[13px] tracking-[0.15em] transition-colors ${
                     isActive
-                      ? 'font-medium text-[#211c14]'
-                      : 'text-[#211c14]/55 hover:text-[#211c14]'
+                      ? 'font-medium text-[#b89b5e]'
+                      : 'text-[#f5f2ec]/55 hover:text-[#f5f2ec]'
                   }`
                 }
               >

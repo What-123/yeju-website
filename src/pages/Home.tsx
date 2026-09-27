@@ -19,7 +19,7 @@ export default function Home() {
           className="pointer-events-none absolute inset-0 opacity-[0.35]"
           style={{
             backgroundImage:
-              'radial-gradient(circle at 85% 15%, rgba(29,77,58,0.18), transparent 45%), radial-gradient(circle at 10% 85%, rgba(176,106,40,0.12), transparent 40%)',
+              'radial-gradient(circle at 85% 15%, rgba(176,106,40,0.10), transparent 45%), radial-gradient(circle at 10% 85%, rgba(26,24,21,0.06), transparent 40%)',
           }}
         />
         {/* 竖排侧边小字 */}
@@ -30,23 +30,23 @@ export default function Home() {
           <p className="label-gold">Yeju Group · A House of Ventures</p>
           <h1 className="mt-8 max-w-[14ch] font-serif text-[clamp(44px,7vw,88px)] font-black leading-[1.15] tracking-wide">
             旷野有居
-            <span className="mx-5 align-middle font-serif text-[0.45em] font-medium text-[#211c14]/25">/</span>
+            <span className="mx-5 align-middle font-serif text-[0.45em] font-medium text-[#1a1815]/25">/</span>
             心怀丰登
           </h1>
-          <p className="mt-8 max-w-[46ch] text-[17px] leading-[1.9] text-[#211c14]/60">
+          <p className="mt-8 max-w-[46ch] text-[17px] leading-[1.9] text-[#1a1815]/60">
             野居集团是一家多元业务控股集团，旗下拥有野居东八区、野居丰登、野居幻屿、野居渡岸与野居资本五大板块——
             从影像、田野、幻屿到渡岸，我们以长期主义经营每一种事业。
           </p>
           <div className="mt-12 flex items-center gap-4">
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 bg-[#211c14] px-8 py-3.5 text-[13px] tracking-[0.2em] text-[#f6f1e8] transition-all hover:bg-[#b06a28]"
+              className="inline-flex items-center gap-2 bg-[#0c0b09] px-8 py-3.5 text-[13px] tracking-[0.2em] text-[#f5f2ec] transition-all hover:bg-[#b06a28]"
             >
               商务合作 <ArrowRight className="h-4 w-4" />
             </Link>
             <a
               href="#divisions"
-              className="inline-flex items-center gap-2 border border-[#211c14]/25 px-8 py-3.5 text-[13px] tracking-[0.2em] transition-colors hover:border-[#b06a28] hover:text-[#b06a28]"
+              className="inline-flex items-center gap-2 border border-[#1a1815]/25 px-8 py-3.5 text-[13px] tracking-[0.2em] transition-colors hover:border-[#b06a28] hover:text-[#b06a28]"
             >
               了解五大板块
             </a>
@@ -67,18 +67,18 @@ export default function Home() {
               <Link
                 key={d.slug}
                 to={`/${d.slug}`}
-                className={`group relative overflow-hidden bg-gradient-to-br ${d.accent} p-10 text-white transition-transform duration-300 hover:-translate-y-1`}
+                className="group relative overflow-hidden border border-[#b89b5e]/20 bg-[#0c0b09] p-10 text-[#e8e2d5] transition-all duration-300 hover:-translate-y-1 hover:border-[#b89b5e]/50"
               >
-                <span className="absolute right-7 top-6 font-latin text-6xl italic text-white/15">
+                <span className="absolute right-7 top-6 font-latin text-6xl italic text-[#b89b5e]/25">
                   0{i + 1}
                 </span>
-                <Icon className="h-7 w-7 opacity-80" />
-                <p className="mt-12 text-[10px] uppercase tracking-[0.35em] text-white/50">
+                <Icon className="h-7 w-7 text-[#b89b5e]" />
+                <p className="mt-12 text-[10px] uppercase tracking-[0.35em] text-[#b89b5e]/70">
                   {d.enName}
                 </p>
                 <h3 className="mt-2 font-serif text-3xl font-bold tracking-[0.15em]">{d.name}</h3>
-                <p className="mt-3 text-sm leading-6 text-white/70">{d.tagline}</p>
-                <span className="mt-7 inline-flex items-center gap-1 text-[13px] tracking-[0.2em] text-white/85">
+                <p className="mt-3 text-sm leading-6 text-[#e8e2d5]/60">{d.tagline}</p>
+                <span className="mt-7 inline-flex items-center gap-1 text-[13px] tracking-[0.2em] text-[#b89b5e]">
                   查看详情
                   <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </span>
@@ -94,12 +94,12 @@ export default function Home() {
           <h2 className="font-serif text-4xl font-bold tracking-wide">集团沿革</h2>
           <span className="label-gold">Milestones</span>
         </div>
-        <div className="mt-10 border-l border-[#211c14]/15">
+        <div className="mt-10 border-l border-[#1a1815]/15">
           {milestones.map((m) => (
             <div key={m.year} className="relative flex items-baseline gap-10 py-5 pl-10">
               <span className="absolute -left-[5px] top-7 h-2.5 w-2.5 rounded-full bg-[#b06a28]" />
               <span className="w-16 shrink-0 font-latin text-2xl italic text-[#b06a28]">{m.year}</span>
-              <span className="text-[15px] text-[#211c14]/65">{m.event}</span>
+              <span className="text-[15px] text-[#1a1815]/65">{m.event}</span>
             </div>
           ))}
         </div>
