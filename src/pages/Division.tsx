@@ -13,6 +13,39 @@ export default function Division() {
   const idx = divisions.findIndex((d) => d.slug === slug)
   const next = divisions[(idx + 1) % divisions.length]
 
+  // 核心业务板块（东八区排在作品与艺术家之后，其余板块保持原位）
+  const businessSection = (
+    <section className="mx-auto max-w-6xl px-6 pt-16">
+      <h2 className="float-text font-serif text-3xl font-bold tracking-wide">核心业务</h2>
+      <div className="mt-6 grid grid-cols-2 gap-5">
+        {division.highlights.map((h) => {
+          const dark = division.slug === 'film'
+          return (
+            <div
+              key={h.title}
+              className={
+                dark
+                  ? 'border border-[#b89b5e]/25 bg-[#0c0b09] p-8 transition-shadow hover:shadow-lg'
+                  : 'border border-[#1a1815]/12 bg-[#ffffff] p-8 transition-shadow hover:shadow-lg'
+              }
+            >
+              <h3
+                className={`float-text font-serif text-xl font-bold ${
+                  dark ? 'text-[#e8c987]' : 'text-[#b06a28]'
+                }`}
+              >
+                {h.title}
+              </h3>
+              <p className={`mt-3 text-sm leading-7 ${dark ? 'text-[#e8e2d5]/65' : 'text-[#1a1815]/65'}`}>
+                {h.desc}
+              </p>
+            </div>
+          )
+        })}
+      </div>
+    </section>
+  )
+
   return (
     <div>
       {/* 东八区开场动画（每个标签页会话播放一次） */}
@@ -98,6 +131,23 @@ export default function Division() {
             <h2 className="float-text font-serif text-3xl font-bold tracking-wide">
               关于{division.shortName}
             </h2>
+            {division.slug === 'film' && (
+              <>
+                <p className="float-text mt-5 font-serif text-xl leading-9 tracking-[0.12em] text-[#b06a28]">
+                  「在电影艺术的旷野中，寻找灵魂与故事的寄居地」
+                </p>
+                <div className="mt-4 flex gap-3">
+                  {['审美力', '原创性'].map((k) => (
+                    <span
+                      key={k}
+                      className="border border-[#b89b5e]/40 px-3 py-1 text-[11px] tracking-[0.3em] text-[#b06a28]"
+                    >
+                      {k}
+                    </span>
+                  ))}
+                </div>
+              </>
+            )}
             {division.intro.map((p, i) => (
               <p key={i} className="mt-5 leading-8 text-[#1a1815]/70">
                 {p}
@@ -126,36 +176,8 @@ export default function Division() {
         </div>
       </section>
 
-      {/* 业务亮点 */}
-      <section className="mx-auto max-w-6xl px-6 pt-16">
-        <h2 className="float-text font-serif text-3xl font-bold tracking-wide">核心业务</h2>
-        <div className="mt-6 grid grid-cols-2 gap-5">
-          {division.highlights.map((h) => {
-            const dark = division.slug === 'film'
-            return (
-              <div
-                key={h.title}
-                className={
-                  dark
-                    ? 'border border-[#b89b5e]/25 bg-[#0c0b09] p-8 transition-shadow hover:shadow-lg'
-                    : 'border border-[#1a1815]/12 bg-[#ffffff] p-8 transition-shadow hover:shadow-lg'
-                }
-              >
-                <h3
-                  className={`float-text font-serif text-xl font-bold ${
-                    dark ? 'text-[#e8c987]' : 'text-[#b06a28]'
-                  }`}
-                >
-                  {h.title}
-                </h3>
-                <p className={`mt-3 text-sm leading-7 ${dark ? 'text-[#e8e2d5]/65' : 'text-[#1a1815]/65'}`}>
-                  {h.desc}
-                </p>
-              </div>
-            )
-          })}
-        </div>
-      </section>
+      {/* 业务亮点（非东八区板块保持原位） */}
+      {division.slug !== 'film' && businessSection}
 
       {/* 东八区专属：影视作品 + 文学出版 + 创作团队 */}
       {division.slug === 'film' && (
@@ -295,6 +317,9 @@ export default function Division() {
               ))}
             </div>
           </section>
+
+          {/* 业务其次：核心业务置于作品与艺术家之后 */}
+          {businessSection}
         </>
       )}
 
