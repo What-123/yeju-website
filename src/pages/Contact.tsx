@@ -41,16 +41,16 @@ export default function Contact() {
   }
 
   const inputCls = (k: keyof FormState) =>
-    `w-full border bg-white px-4 py-3 text-sm outline-none transition-colors focus:border-[#b06a28] ${
-      errors[k] ? 'border-red-400' : 'border-[#1a1815]/20'
+    `w-full border bg-[#131109] px-4 py-3 text-sm text-[#e8e2d5] placeholder:text-[#e8e2d5]/35 outline-none transition-colors focus:border-[#e8c987] ${
+      errors[k] ? 'border-red-400' : 'border-[#b89b5e]/25'
     }`
 
   if (submitted) {
     return (
       <div className="mx-auto max-w-2xl px-6 py-28 text-center">
-        <CheckCircle2 className="mx-auto h-14 w-14 text-[#1d4d3a]" />
+        <CheckCircle2 className="mx-auto h-14 w-14 text-[#b89b5e]" />
         <h1 className="mt-6 font-serif text-3xl font-bold tracking-wide">提交成功</h1>
-        <p className="mt-4 leading-8 text-[#1a1815]/65">
+        <p className="mt-4 leading-8 text-[#e8e2d5]/70">
           感谢您的留言，{form.name}。我们已收到您的意向{form.topic ? `（${form.topic}）` : ''}，
           通常会在 2 个工作日内通过邮件与您联系。
         </p>
@@ -60,13 +60,13 @@ export default function Contact() {
               setForm(initial)
               setSubmitted(false)
             }}
-            className="border border-[#1a1815]/25 px-6 py-3 text-sm tracking-widest transition-colors hover:border-[#1a1815]"
+            className="border border-[#b89b5e]/40 px-6 py-3 text-sm tracking-widest transition-colors hover:border-[#e8c987]"
           >
             再写一条
           </button>
           <Link
             to="/"
-            className="bg-[#0c0b09] px-6 py-3 text-[13px] tracking-[0.2em] text-[#f5f2ec] transition-colors hover:bg-[#b06a28]"
+            className="bg-[#b89b5e] px-6 py-3 text-[13px] tracking-[0.2em] text-[#0c0b09] transition-colors hover:bg-[#e8c987]"
           >
             返回首页
           </Link>
@@ -79,18 +79,18 @@ export default function Contact() {
     <div className="mx-auto max-w-6xl px-6 py-16">
       <Link
         to="/"
-        className="inline-flex items-center gap-1.5 text-sm text-[#1a1815]/50 transition-colors hover:text-[#1a1815]"
+        className="inline-flex items-center gap-1.5 text-sm text-[#e8e2d5]/50 transition-colors hover:text-[#e8e2d5]"
       >
         <ArrowLeft className="h-4 w-4" /> 返回首页
       </Link>
       <div className="mt-8 grid grid-cols-12 gap-12">
         <div className="col-span-4">
           <h1 className="font-serif text-5xl font-bold tracking-wide">联系我们</h1>
-          <p className="mt-5 leading-8 text-[#1a1815]/65">
+          <p className="mt-5 leading-8 text-[#e8e2d5]/70">
             无论您是希望与野居的某个板块开展合作、洽谈投资，还是媒体采访与公益协作，
             都欢迎通过右侧表单留下您的信息。
           </p>
-          <div className="mt-10 space-y-5 border-t border-[#1a1815]/10 pt-8 text-sm">
+          <div className="mt-10 space-y-5 border-t border-[#b89b5e]/15 pt-8 text-sm">
             <div>
               <p className="label-gold">邮箱</p>
               <p className="mt-1">contact@yeju.example.com</p>
@@ -106,7 +106,7 @@ export default function Contact() {
           </div>
         </div>
 
-        <form onSubmit={handleSubmit} className="col-span-8 border border-[#1a1815]/12 bg-[#ffffff] p-10" noValidate>
+        <form onSubmit={handleSubmit} className="col-span-8 border border-[#b89b5e]/25 bg-[#131109] p-10" noValidate>
           <div className="grid grid-cols-2 gap-6">
             <div>
               <label className="mb-2 block text-sm">
@@ -158,11 +158,11 @@ export default function Contact() {
           </div>
           <button
             type="submit"
-            className="mt-8 inline-flex items-center gap-2 bg-[#0c0b09] px-8 py-3 text-[13px] tracking-[0.2em] text-[#f5f2ec] transition-colors hover:bg-[#b06a28]"
+            className="mt-8 inline-flex items-center gap-2 bg-[#b89b5e] px-8 py-3 text-[13px] tracking-[0.2em] text-[#0c0b09] transition-colors hover:bg-[#e8c987]"
           >
             <Send className="h-4 w-4" /> 提交留言
           </button>
-          <p className="mt-4 text-xs text-[#1a1815]/40">
+          <p className="mt-4 text-xs text-[#e8e2d5]/40">
             提交即表示您同意我们就本次咨询与您联系。我们承诺不将您的信息用于其他用途。
           </p>
         </form>

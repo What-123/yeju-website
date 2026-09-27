@@ -27,7 +27,7 @@ function ScrollToTop() {
 
 export default function Layout() {
   return (
-    <div className="min-h-screen bg-[#f5f2ec] text-[#1a1815] antialiased">
+    <div className="min-h-screen bg-[#0c0b09] text-[#e8e2d5] antialiased">
       <ScrollToTop />
       {/* 顶部导航 */}
       <header className="sticky top-0 z-50 border-b border-[#b89b5e]/15 bg-[#0c0b09]/95 backdrop-blur">

@@ -26,17 +26,17 @@ export default function Division() {
               className={
                 dark
                   ? 'border border-[#b89b5e]/25 bg-[#0c0b09] p-8 transition-shadow hover:shadow-lg'
-                  : 'border border-[#1a1815]/12 bg-[#ffffff] p-8 transition-shadow hover:shadow-lg'
+                  : 'border border-[#b89b5e]/20 bg-[#131109] p-8 transition-shadow hover:shadow-lg'
               }
             >
               <h3
                 className={`float-text font-serif text-xl font-bold ${
-                  dark ? 'text-[#e8c987]' : 'text-[#b06a28]'
+                  dark ? 'text-[#e8c987]' : 'text-[#e8c987]'
                 }`}
               >
                 {h.title}
               </h3>
-              <p className={`mt-3 text-sm leading-7 ${dark ? 'text-[#e8e2d5]/65' : 'text-[#1a1815]/65'}`}>
+              <p className={`mt-3 text-sm leading-7 ${dark ? 'text-[#e8e2d5]/65' : 'text-[#e8e2d5]/65'}`}>
                 {h.desc}
               </p>
             </div>
@@ -133,14 +133,14 @@ export default function Division() {
             </h2>
             {division.slug === 'film' && (
               <>
-                <p className="float-text mt-5 font-serif text-xl leading-9 tracking-[0.12em] text-[#b06a28]">
+                <p className="float-text mt-5 font-serif text-xl leading-9 tracking-[0.12em] text-[#e8c987]">
                   「在电影艺术的旷野中，寻找灵魂与故事的寄居地」
                 </p>
                 <div className="mt-4 flex gap-3">
                   {['审美力', '原创性'].map((k) => (
                     <span
                       key={k}
-                      className="border border-[#b89b5e]/40 px-3 py-1 text-[11px] tracking-[0.3em] text-[#b06a28]"
+                      className="border border-[#b89b5e]/40 px-3 py-1 text-[11px] tracking-[0.3em] text-[#e8c987]"
                     >
                       {k}
                     </span>
@@ -149,25 +149,25 @@ export default function Division() {
               </>
             )}
             {division.intro.map((p, i) => (
-              <p key={i} className="mt-5 leading-8 text-[#1a1815]/70">
+              <p key={i} className="mt-5 leading-8 text-[#e8e2d5]/70">
                 {p}
               </p>
             ))}
           </div>
           <div className="col-span-4">
-            <div className="border border-[#1a1815]/12 bg-[#ffffff] p-9">
-              <p className={`float-text font-serif text-5xl font-bold text-[#b06a28]`}>
+            <div className="border border-[#b89b5e]/20 bg-[#131109] p-9">
+              <p className={`float-text font-serif text-5xl font-bold text-[#e8c987]`}>
                 {division.stats[0].value}
               </p>
-              <p className="mt-1 text-sm text-[#1a1815]/50">{division.stats[0].label}</p>
-              <div className="my-6 border-t border-[#1a1815]/10" />
+              <p className="mt-1 text-sm text-[#e8e2d5]/50">{division.stats[0].label}</p>
+              <div className="my-6 border-t border-[#b89b5e]/15" />
               <div className="grid grid-cols-2 gap-6">
                 {division.stats.slice(1).map((s) => (
                   <div key={s.label}>
-                    <p className={`float-text font-serif text-2xl font-bold text-[#b06a28]`}>
+                    <p className={`float-text font-serif text-2xl font-bold text-[#e8c987]`}>
                       {s.value}
                     </p>
-                    <p className="mt-1 text-xs text-[#1a1815]/50">{s.label}</p>
+                    <p className="mt-1 text-xs text-[#e8e2d5]/50">{s.label}</p>
                   </div>
                 ))}
               </div>
@@ -188,7 +188,7 @@ export default function Division() {
               <span className="label-gold">Works</span>
             </div>
 
-            <h3 className="mt-8 text-sm font-semibold uppercase tracking-[0.25em] text-[#1a1815]/45">
+            <h3 className="mt-8 text-sm font-semibold uppercase tracking-[0.25em] text-[#e8e2d5]/45">
               影展与完成作品
             </h3>
             <div className="mt-4 grid grid-cols-2 gap-5">
@@ -197,7 +197,7 @@ export default function Division() {
                 .map((f) => (
                   <div
                     key={f.title}
-                    className="group overflow-hidden border border-[#1a1815]/12 bg-white transition-shadow hover:shadow-lg"
+                    className="group overflow-hidden border border-[#b89b5e]/20 bg-[#131109] transition-shadow hover:shadow-lg"
                   >
                     {f.image ? (
                       <div className="overflow-hidden">
@@ -217,20 +217,20 @@ export default function Division() {
                     <div className="p-6">
                       <div className="flex items-baseline justify-between gap-3">
                         <h4 className="float-text font-serif text-xl font-bold">{f.title}</h4>
-                        <span className="shrink-0 text-xs text-[#1a1815]/45">
+                        <span className="shrink-0 text-xs text-[#e8e2d5]/45">
                           {f.year} · {f.type}
                         </span>
                       </div>
-                      <p className="mt-2.5 text-sm leading-6 text-[#1a1815]/65">{f.note}</p>
+                      <p className="mt-2.5 text-sm leading-6 text-[#e8e2d5]/65">{f.note}</p>
                     </div>
                   </div>
                 ))}
             </div>
 
-            <h3 className="mt-12 text-sm font-semibold uppercase tracking-[0.25em] text-[#1a1815]/45">
+            <h3 className="mt-12 text-sm font-semibold uppercase tracking-[0.25em] text-[#e8e2d5]/45">
               开发中项目
             </h3>
-            <div className="mt-3 divide-y divide-[#1a1815]/10 border-y border-[#1a1815]/10">
+            <div className="mt-3 divide-y divide-[#b89b5e]/15 border-y border-[#b89b5e]/15">
               {films
                 .filter((f) => f.status === 'development')
                 .map((f) => (
@@ -238,9 +238,9 @@ export default function Division() {
                     <span className="float-text col-span-3 font-serif text-xl font-bold">
                       {f.title}
                     </span>
-                    <span className="col-span-2 text-sm text-[#1a1815]/50">{f.year}</span>
-                    <span className="col-span-2 text-sm text-[#1a1815]/50">{f.type}</span>
-                    <span className="col-span-5 text-sm leading-6 text-[#1a1815]/65">{f.note}</span>
+                    <span className="col-span-2 text-sm text-[#e8e2d5]/50">{f.year}</span>
+                    <span className="col-span-2 text-sm text-[#e8e2d5]/50">{f.type}</span>
+                    <span className="col-span-5 text-sm leading-6 text-[#e8e2d5]/65">{f.note}</span>
                   </div>
                 ))}
             </div>
@@ -255,16 +255,16 @@ export default function Division() {
               {books.map((b) => (
                 <div
                   key={b.title}
-                  className="flex gap-6 border border-[#1a1815]/12 bg-[#ffffff] p-6 transition-shadow hover:shadow-lg"
+                  className="flex gap-6 border border-[#b89b5e]/20 bg-[#131109] p-6 transition-shadow hover:shadow-lg"
                 >
                   {b.image ? (
                     <img
                       src={b.image}
                       alt={b.title}
-                      className="w-24 shrink-0 self-start border border-[#1a1815]/10 object-cover shadow-sm"
+                      className="w-24 shrink-0 self-start border border-[#b89b5e]/15 object-cover shadow-sm"
                     />
                   ) : (
-                    <div className="flex w-24 shrink-0 items-center justify-center self-start border border-[#1a1815]/10 bg-gradient-to-br from-[#16140f] to-[#2a2620] py-16">
+                    <div className="flex w-24 shrink-0 items-center justify-center self-start border border-[#b89b5e]/15 bg-gradient-to-br from-[#16140f] to-[#2a2620] py-16">
                       <span className="px-2 text-center font-serif text-lg font-bold leading-6 text-white/70">
                         {b.title.replace(/[《》]/g, '')}
                       </span>
@@ -272,10 +272,10 @@ export default function Division() {
                   )}
                   <div className="min-w-0">
                     <h3 className="float-text font-serif text-lg font-bold">{b.title}</h3>
-                    <p className="mt-1 text-xs text-[#1a1815]/45">
+                    <p className="mt-1 text-xs text-[#e8e2d5]/45">
                       {b.author} · {b.year}
                     </p>
-                    <p className="mt-2.5 text-sm leading-6 text-[#1a1815]/60">{b.note}</p>
+                    <p className="mt-2.5 text-sm leading-6 text-[#e8e2d5]/60">{b.note}</p>
                   </div>
                 </div>
               ))}
@@ -334,7 +334,7 @@ export default function Division() {
             {products.map((p) => (
               <div
                 key={p.title}
-                className="border border-[#1a1815]/12 bg-[#ffffff] p-8 transition-shadow hover:shadow-lg"
+                className="border border-[#b89b5e]/20 bg-[#131109] p-8 transition-shadow hover:shadow-lg"
               >
                 <div className="flex items-center justify-between">
                   <h3 className="float-text font-serif text-xl font-bold">{p.title}</h3>
@@ -344,11 +344,11 @@ export default function Division() {
                     {p.en}
                   </span>
                 </div>
-                <p className="mt-3 text-sm leading-7 text-[#1a1815]/65">{p.desc}</p>
+                <p className="mt-3 text-sm leading-7 text-[#e8e2d5]/65">{p.desc}</p>
               </div>
             ))}
           </div>
-          <p className="mt-6 border-l-2 border-[#5d7428] pl-4 text-sm leading-7 text-[#1a1815]/55">
+          <p className="mt-6 border-l-2 border-[#5d7428] pl-4 text-sm leading-7 text-[#e8e2d5]/55">
             品牌视觉以茶枝与果实为母题，呼应「丰收」与「馈赠」——把农产品当作体面、可讲述的礼物来做。
           </p>
         </section>
@@ -372,7 +372,7 @@ export default function Division() {
               </div>
             ))}
           </div>
-          <p className="mt-6 border-l-2 border-[#1e6076] pl-4 text-sm leading-7 text-[#1a1815]/55">
+          <p className="mt-6 border-l-2 border-[#1e6076] pl-4 text-sm leading-7 text-[#e8e2d5]/55">
             以人工智能模型制作游戏，探索更轻盈的游戏创作方式，以及令人愉悦的互动世界。
           </p>
         </section>
@@ -389,11 +389,11 @@ export default function Division() {
             {eduSteps.map((s) => (
               <div
                 key={s.no}
-                className="border border-[#1a1815]/12 bg-[#ffffff] p-8 transition-shadow hover:shadow-lg"
+                className="border border-[#b89b5e]/20 bg-[#131109] p-8 transition-shadow hover:shadow-lg"
               >
-                <span className={`font-serif text-3xl font-bold text-[#b06a28]`}>{s.no}</span>
+                <span className={`font-serif text-3xl font-bold text-[#e8c987]`}>{s.no}</span>
                 <h3 className="float-text mt-4 font-serif text-lg font-bold">{s.title}</h3>
-                <p className="mt-2.5 text-sm leading-6 text-[#1a1815]/65">{s.desc}</p>
+                <p className="mt-2.5 text-sm leading-6 text-[#e8e2d5]/65">{s.desc}</p>
               </div>
             ))}
           </div>
@@ -411,12 +411,12 @@ export default function Division() {
             {capitalBeliefs.map((b) => (
               <div
                 key={b.title}
-                className="border border-[#1a1815]/12 bg-[#ffffff] p-9 transition-shadow hover:shadow-lg"
+                className="border border-[#b89b5e]/20 bg-[#131109] p-9 transition-shadow hover:shadow-lg"
               >
-                <h3 className={`float-text font-serif text-xl font-bold text-[#b06a28]`}>
+                <h3 className={`float-text font-serif text-xl font-bold text-[#e8c987]`}>
                   {b.title}
                 </h3>
-                <p className="mt-3 text-sm leading-7 text-[#1a1815]/65">{b.desc}</p>
+                <p className="mt-3 text-sm leading-7 text-[#e8e2d5]/65">{b.desc}</p>
               </div>
             ))}
           </div>
@@ -427,18 +427,18 @@ export default function Division() {
       <section className="mx-auto max-w-6xl px-6 pt-20">
         <Link
           to={`/${next.slug}`}
-          className="group flex items-center justify-between border border-[#1a1815]/15 bg-white px-8 py-6 transition-shadow hover:shadow-lg"
+          className="group flex items-center justify-between border border-[#b89b5e]/25 bg-[#131109] px-8 py-6 transition-shadow hover:shadow-lg"
         >
           <div>
             <p className="label-gold">下一个板块 · Next</p>
             <p className="float-text mt-1 font-serif text-2xl font-bold">{next.name}</p>
           </div>
-          <ArrowRight className="h-6 w-6 text-[#1a1815]/40 transition-transform group-hover:translate-x-1" />
+          <ArrowRight className="h-6 w-6 text-[#e8e2d5]/40 transition-transform group-hover:translate-x-1" />
         </Link>
         <div className="mt-8 text-center">
           <Link
             to="/contact"
-            className="inline-flex items-center gap-2 bg-[#0c0b09] px-7 py-3 text-[13px] tracking-[0.2em] text-[#f5f2ec] transition-colors hover:bg-[#b06a28]"
+            className="inline-flex items-center gap-2 bg-[#b89b5e] px-7 py-3 text-[13px] tracking-[0.2em] text-[#0c0b09] transition-colors hover:bg-[#e8c987]"
           >
             与{division.shortName}洽谈合作 <ArrowRight className="h-4 w-4" />
           </Link>
