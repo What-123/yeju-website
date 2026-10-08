@@ -12,6 +12,7 @@ import bookChengshi from '@/assets/works/book-chengshi.jpg'
 import bookLieche from '@/assets/works/book-lieche.jpg'
 import yizhiBeifenImg from '@/assets/works/yizhi-beifen.jpg'
 import photoLiuweiyuan from '@/assets/photo-liuweiyuan.webp'
+import photoZhangchenrui from '@/assets/photo-zhangchenrui.webp'
 
 export interface Division {
   slug: string
@@ -182,6 +183,7 @@ export const artists: Artist[] = [
   {
     name: '张宸睿',
     role: '编剧',
+    photo: photoZhangchenrui,
     desc: '2002 年生于湖南株洲，2023 年毕业于湖南铁路科技职业技术学院铁道机车系。2019 年起进行小说创作，作品以现实主义为基调，融入多种行文技法，形成独特的个人风格。作为野居最年轻的编剧，状态最佳时曾一周内完成六万字创作，潜力无穷。',
     works: ['出版作品集《列车飞奔》', '《野草飘零》策划（文学+影视双轨开发中）'],
   },
