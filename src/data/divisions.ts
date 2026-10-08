@@ -11,6 +11,7 @@ import bookMigong from '@/assets/works/book-migong.jpg'
 import bookChengshi from '@/assets/works/book-chengshi.jpg'
 import bookLieche from '@/assets/works/book-lieche.jpg'
 import yizhiBeifenImg from '@/assets/works/yizhi-beifen.jpg'
+import photoLiuweiyuan from '@/assets/photo-liuweiyuan.webp'
 
 export interface Division {
   slug: string
@@ -168,6 +169,7 @@ export const artists: Artist[] = [
   {
     name: '刘伟源',
     role: '创始人 / 作家 · 编剧',
+    photo: photoLiuweiyuan,
     desc: '2000 年生于深圳，毕业于香港中文大学（深圳）英语专业（国际文化传播方向）。2012 年起进行创意写作，小说、散文、诗歌、戏剧均有涉猎，已完成多部个人作品集出版，创作成文超百万字，现为出版社签约作家、豆瓣认证创作者。2021 年加入大地电影，2022 年独立完成首部院线剧本《意志备份》。',
     works: ['《意志备份》（编剧）', '「东方海岸」系列 IP', '「星海无归」系列 IP', '出版作品集《野居》《城市，人群与身影》等六部'],
   },
