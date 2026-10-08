@@ -345,31 +345,38 @@ export default function Division() {
               <h2 className="float-text font-serif text-3xl font-bold tracking-wide">文学与出版</h2>
               <span className="label-gold">Books</span>
             </div>
-            <div className="mt-6 grid grid-cols-2 gap-5">
-              {books.map((b) => (
+            <div className="mt-10 border-t border-[#b89b5e]/20">
+              {books.map((b, i) => (
                 <div
                   key={b.title}
-                  className="flex gap-6 border border-[#b89b5e]/20 bg-[#131109] p-6 transition-shadow hover:shadow-lg"
+                  className="group grid grid-cols-12 items-start gap-8 border-b border-[#b89b5e]/20 px-4 py-8 transition-colors duration-300 hover:bg-[#b89b5e]/5"
                 >
-                  {b.image ? (
-                    <img
-                      src={b.image}
-                      alt={b.title}
-                      className="w-24 shrink-0 self-start border border-[#b89b5e]/15 object-cover shadow-sm"
-                    />
-                  ) : (
-                    <div className="flex w-24 shrink-0 items-center justify-center self-start border border-[#b89b5e]/15 bg-gradient-to-br from-[#16140f] to-[#2a2620] py-16">
-                      <span className="px-2 text-center font-serif text-lg font-bold leading-6 text-white/70">
-                        {b.title.replace(/[《》]/g, '')}
-                      </span>
-                    </div>
-                  )}
-                  <div className="min-w-0">
-                    <h3 className="float-text font-serif text-lg font-bold">{b.title}</h3>
-                    <p className="mt-1 text-xs text-[#e8e2d5]/45">
+                  <span className="font-latin col-span-1 pt-12 text-xl italic text-[#b89b5e]/50">
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  <div className="col-span-2">
+                    {b.image ? (
+                      <img
+                        src={b.image}
+                        alt={b.title}
+                        className="w-28 border border-[#b89b5e]/25 object-cover shadow-[0_10px_35px_rgba(0,0,0,0.55)] transition-transform duration-300 group-hover:-translate-y-1.5"
+                      />
+                    ) : (
+                      <div className="flex w-28 items-center justify-center self-start border border-[#b89b5e]/25 bg-gradient-to-br from-[#16140f] to-[#2a2620] py-20">
+                        <span className="px-2 text-center font-serif text-lg font-bold leading-6 text-white/70">
+                          {b.title.replace(/[《》]/g, '')}
+                        </span>
+                      </div>
+                    )}
+                  </div>
+                  <div className="col-span-9 pt-2">
+                    <h3 className="float-text font-serif text-2xl font-bold tracking-[0.1em] text-[#e8c987]">
+                      {b.title}
+                    </h3>
+                    <p className="mt-2 text-xs tracking-[0.35em] text-white/40">
                       {b.author} · {b.year}
                     </p>
-                    <p className="mt-2.5 text-sm leading-6 text-[#e8e2d5]/60">{b.note}</p>
+                    <p className="mt-4 max-w-3xl text-sm leading-7 text-[#e8e2d5]/65">{b.note}</p>
                   </div>
                 </div>
               ))}
