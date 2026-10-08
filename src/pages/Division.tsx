@@ -124,6 +124,57 @@ export default function Division() {
         </div>
       </section>
 
+      {/* 东八区：创作团队置顶——艺术家与作品是东八区最重要的内容 */}
+      {division.slug === 'film' && (
+        <section className="mx-auto max-w-6xl px-6 pt-20">
+          <div className="flex items-end justify-between">
+            <div>
+              <h2 className="float-text font-serif text-3xl font-bold tracking-wide">创作团队</h2>
+              <p className="mt-3 max-w-xl text-sm leading-6 text-[#e8e2d5]/50">
+                东八区最重要的资产，是这些持续创作的人——艺术家与他们的作品，永远排在最前。
+              </p>
+            </div>
+            <span className="label-gold">Artists</span>
+          </div>
+          <div className="mt-10 border-t border-[#b89b5e]/20">
+            {artists.map((a, i) => (
+              <div
+                key={a.name}
+                className="group relative grid grid-cols-12 items-start gap-8 border-b border-[#b89b5e]/20 px-4 py-10 transition-colors duration-300 hover:bg-[#b89b5e]/5"
+              >
+                <span className="font-latin col-span-1 pt-3 text-xl italic text-[#b89b5e]/50">
+                  {String(i + 1).padStart(2, '0')}
+                </span>
+                {/* 首字印章 */}
+                <div className="col-span-2">
+                  <div className="flex h-24 w-24 items-center justify-center bg-gradient-to-br from-[#16140f] to-[#2a2620] font-serif text-4xl font-bold text-[#e8c987] ring-1 ring-[#b89b5e]/40 transition-shadow duration-300 group-hover:shadow-[0_0_35px_rgba(184,155,94,0.25)]">
+                    {a.name.charAt(0)}
+                  </div>
+                </div>
+                <div className="col-span-9">
+                  <div className="flex flex-wrap items-baseline gap-x-5 gap-y-1">
+                    <h3 className="float-text font-serif text-3xl font-black tracking-[0.15em] text-[#e8c987]">
+                      {a.name}
+                    </h3>
+                    {a.role && (
+                      <span className="text-xs tracking-[0.35em] text-white/40">{a.role}</span>
+                    )}
+                  </div>
+                  {a.desc && (
+                    <p className="mt-4 max-w-3xl text-sm leading-7 text-[#e8e2d5]/65">{a.desc}</p>
+                  )}
+                  {a.works.length > 0 && (
+                    <p className="mt-4 text-xs tracking-[0.15em] text-[#b89b5e]/70">
+                      代表作 · {a.works.join(' / ')}
+                    </p>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
       {/* 介绍 */}
       <section className="mx-auto max-w-6xl px-6 pt-16">
         <div className="grid grid-cols-12 gap-10">
@@ -319,42 +370,6 @@ export default function Division() {
                       {b.author} · {b.year}
                     </p>
                     <p className="mt-2.5 text-sm leading-6 text-[#e8e2d5]/60">{b.note}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          <section className="mx-auto max-w-6xl px-6 pt-16">
-            <div className="flex items-end justify-between">
-              <h2 className="float-text font-serif text-3xl font-bold tracking-wide">创作团队</h2>
-              <span className="label-gold">Team</span>
-            </div>
-            <div className="mt-6 grid grid-cols-2 gap-5">
-              {artists.map((a) => (
-                <div
-                  key={a.name}
-                  className="flex gap-6 border border-[#b89b5e]/25 bg-[#0c0b09] p-8 transition-shadow hover:shadow-lg"
-                >
-                  {/* 头像占位：首字印章风 */}
-                  <div className="flex h-20 w-20 shrink-0 items-center justify-center bg-gradient-to-br from-[#16140f] to-[#2a2620] font-serif text-3xl font-bold text-[#e8c987] ring-1 ring-[#b89b5e]/30">
-                    {a.name.charAt(0)}
-                  </div>
-                  <div className="min-w-0 flex-1">
-                    <div className="flex items-baseline gap-3">
-                      <h3 className="float-text font-serif text-xl font-bold text-[#e8c987]">{a.name}</h3>
-                      {a.role && (
-                        <span className="text-xs tracking-widest text-white/40">{a.role}</span>
-                      )}
-                    </div>
-                    {a.desc && (
-                      <p className="mt-2 text-sm leading-6 text-[#e8e2d5]/65">{a.desc}</p>
-                    )}
-                    {a.works.length > 0 && (
-                      <p className="mt-3 text-xs text-white/40">
-                        代表作：{a.works.join('、')}
-                      </p>
-                    )}
                   </div>
                 </div>
               ))}
