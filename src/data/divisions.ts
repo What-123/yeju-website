@@ -14,6 +14,7 @@ import yizhiBeifenImg from '@/assets/works/yizhi-beifen.jpg'
 import photoLiuweiyuan from '@/assets/photo-liuweiyuan.webp'
 import photoZhangchenrui from '@/assets/photo-zhangchenrui.webp'
 import photoLishangyou from '@/assets/photo-lishangyou.webp'
+import photoXiangziqi from '@/assets/photo-xiangziqi.webp'
 
 export interface Division {
   slug: string
@@ -199,6 +200,13 @@ export const artists: Artist[] = [
     name: '高书樵',
     role: '',
     desc: '',
+    works: [],
+  },
+  {
+    name: '向子奇',
+    role: '签约作者',
+    photo: photoXiangziqi,
+    desc: '深圳大学法语学士，主攻法语国家女性主义发展。从事文学创作多年，擅长影视策划数据收集和事实考证，并以女性的眼光衡量剧本。',
     works: [],
   },
 ]
