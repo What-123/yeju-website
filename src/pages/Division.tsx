@@ -135,7 +135,7 @@ export default function Division() {
             {artists.map((a, i) => {
               const wide = i % 2 === 0
               return (
-                <div key={a.name} className="grid grid-cols-12 items-end gap-10">
+                <div key={a.name} className="grid grid-cols-12 items-center gap-10">
                   {/* 照片（黑白）+ 斜体名字 */}
                   <div className={wide ? 'col-span-7' : 'col-span-5'}>
                     {a.photo ? (
