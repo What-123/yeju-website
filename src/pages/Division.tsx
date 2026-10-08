@@ -188,59 +188,102 @@ export default function Division() {
               <span className="label-gold">Works</span>
             </div>
 
-            <h3 className="mt-8 text-sm font-semibold uppercase tracking-[0.25em] text-[#e8e2d5]/45">
-              影展与完成作品
-            </h3>
-            <div className="mt-4 grid grid-cols-2 gap-5">
-              {films
-                .filter((f) => f.status === 'completed')
-                .map((f) => (
-                  <div
-                    key={f.title}
-                    className="group overflow-hidden border border-[#b89b5e]/20 bg-[#131109] transition-shadow hover:shadow-lg"
-                  >
-                    {f.image ? (
-                      <div className="overflow-hidden">
+            {(() => {
+              const [featured, ...rest] = films.filter((f) => f.status === 'completed')
+              return (
+                <>
+                  {/* 首映特写：聚光灯式大图 */}
+                  {featured && (
+                    <div className="group relative mt-8 overflow-hidden border border-[#b89b5e]/30 transition-shadow duration-500 hover:shadow-[0_0_70px_rgba(184,155,94,0.15)]">
+                      {featured.image ? (
                         <img
-                          src={f.image}
-                          alt={f.title}
-                          className="aspect-[16/9] w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                          src={featured.image}
+                          alt={featured.title}
+                          className="aspect-[21/9] w-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
                         />
+                      ) : (
+                        <div className="flex aspect-[21/9] w-full items-center justify-center bg-gradient-to-br from-[#16140f] to-[#2a2620]">
+                          <span className="font-serif text-6xl font-bold text-[#b89b5e]/30">
+                            {featured.title.replace(/[《》]/g, '')}
+                          </span>
+                        </div>
+                      )}
+                      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0c0b09] via-[#0c0b09]/55 to-transparent" />
+                      <div className="absolute inset-x-0 bottom-0 p-9">
+                        <span className="label-gold-light">影展与完成作品 · Featured</span>
+                        <h3 className="float-text mt-3 font-serif text-4xl font-black tracking-[0.1em] text-[#e8c987]">
+                          {featured.title}
+                        </h3>
+                        <p className="mt-1.5 text-xs tracking-[0.3em] text-white/50">
+                          {featured.year} · {featured.type}
+                        </p>
+                        <p className="mt-3 max-w-2xl text-sm leading-7 text-[#e8e2d5]/75">
+                          {featured.note}
+                        </p>
                       </div>
-                    ) : (
-                      <div className="flex aspect-[16/9] w-full items-center justify-center bg-gradient-to-br from-[#16140f] to-[#2a2620]">
-                        <span className="font-serif text-4xl font-bold text-[#b89b5e]/30">
-                          {f.title.replace(/[《》]/g, '')}
-                        </span>
-                      </div>
-                    )}
-                    <div className="p-6">
-                      <div className="flex items-baseline justify-between gap-3">
-                        <h4 className="float-text font-serif text-xl font-bold">{f.title}</h4>
-                        <span className="shrink-0 text-xs text-[#e8e2d5]/45">
-                          {f.year} · {f.type}
-                        </span>
-                      </div>
-                      <p className="mt-2.5 text-sm leading-6 text-[#e8e2d5]/65">{f.note}</p>
                     </div>
-                  </div>
-                ))}
-            </div>
+                  )}
+
+                  {/* 其余完成作品：双列画廊 */}
+                  {rest.length > 0 && (
+                    <div className="mt-5 grid grid-cols-2 gap-5">
+                      {rest.map((f) => (
+                        <div
+                          key={f.title}
+                          className="group overflow-hidden border border-[#b89b5e]/20 bg-[#131109] transition-all duration-300 hover:border-[#b89b5e]/45 hover:shadow-[0_0_50px_rgba(184,155,94,0.12)]"
+                        >
+                          {f.image ? (
+                            <div className="overflow-hidden">
+                              <img
+                                src={f.image}
+                                alt={f.title}
+                                className="aspect-[16/9] w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                              />
+                            </div>
+                          ) : (
+                            <div className="flex aspect-[16/9] w-full items-center justify-center bg-gradient-to-br from-[#16140f] to-[#2a2620]">
+                              <span className="font-serif text-4xl font-bold text-[#b89b5e]/30">
+                                {f.title.replace(/[《》]/g, '')}
+                              </span>
+                            </div>
+                          )}
+                          <div className="p-6">
+                            <div className="flex items-baseline justify-between gap-3">
+                              <h4 className="float-text font-serif text-xl font-bold text-[#e8c987]">{f.title}</h4>
+                              <span className="shrink-0 text-xs text-[#e8e2d5]/45">
+                                {f.year} · {f.type}
+                              </span>
+                            </div>
+                            <p className="mt-2.5 text-sm leading-6 text-[#e8e2d5]/65">{f.note}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </>
+              )
+            })()}
 
             <h3 className="mt-12 text-sm font-semibold uppercase tracking-[0.25em] text-[#e8e2d5]/45">
-              开发中项目
+              开发中项目 · In Development
             </h3>
             <div className="mt-3 divide-y divide-[#b89b5e]/15 border-y border-[#b89b5e]/15">
               {films
                 .filter((f) => f.status === 'development')
-                .map((f) => (
-                  <div key={f.title} className="grid grid-cols-12 items-baseline gap-4 py-5">
+                .map((f, i) => (
+                  <div
+                    key={f.title}
+                    className="grid grid-cols-12 items-baseline gap-4 px-3 py-5 transition-colors hover:bg-[#b89b5e]/5"
+                  >
+                    <span className="font-latin col-span-1 text-sm italic text-[#b89b5e]/60">
+                      {String(i + 1).padStart(2, '0')}
+                    </span>
                     <span className="float-text col-span-3 font-serif text-xl font-bold">
                       {f.title}
                     </span>
                     <span className="col-span-2 text-sm text-[#e8e2d5]/50">{f.year}</span>
                     <span className="col-span-2 text-sm text-[#e8e2d5]/50">{f.type}</span>
-                    <span className="col-span-5 text-sm leading-6 text-[#e8e2d5]/65">{f.note}</span>
+                    <span className="col-span-4 text-sm leading-6 text-[#e8e2d5]/65">{f.note}</span>
                   </div>
                 ))}
             </div>
