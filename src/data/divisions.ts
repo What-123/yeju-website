@@ -191,6 +191,13 @@ export const artists: Artist[] = [
     works: ['出版作品集《列车飞奔》', '《野草飘零》策划（文学+影视双轨开发中）'],
   },
   {
+    name: '向子奇',
+    role: '签约作者',
+    photo: photoXiangziqi,
+    desc: '深圳大学法语学士，主攻法语国家女性主义发展。从事文学创作多年，擅长影视策划数据收集和事实考证，并以女性的眼光衡量剧本。',
+    works: [],
+  },
+  {
     name: '张浩健',
     role: '',
     desc: '',
@@ -200,13 +207,6 @@ export const artists: Artist[] = [
     name: '高书樵',
     role: '',
     desc: '',
-    works: [],
-  },
-  {
-    name: '向子奇',
-    role: '签约作者',
-    photo: photoXiangziqi,
-    desc: '深圳大学法语学士，主攻法语国家女性主义发展。从事文学创作多年，擅长影视策划数据收集和事实考证，并以女性的眼光衡量剧本。',
     works: [],
   },
 ]
