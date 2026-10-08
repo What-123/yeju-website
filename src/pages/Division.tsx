@@ -81,7 +81,7 @@ export default function Division() {
                     {division.name}
                     <Film
                       className="cine-icon h-5 w-5 text-[#ffd166]"
-                      style={{ left: '-2.4rem', top: '-0.4rem', animationDelay: '0s' }}
+                      style={{ left: '-3.6rem', top: '-1rem', animationDelay: '0s' }}
                     />
                     <Video
                       className="cine-icon h-6 w-6 text-white/85"
@@ -89,7 +89,7 @@ export default function Division() {
                     />
                     <Sparkles
                       className="cine-icon h-4 w-4 text-[#ffd166]"
-                      style={{ left: '-1.8rem', bottom: '-0.6rem', animationDelay: '1s' }}
+                      style={{ left: '-2.6rem', bottom: '-0.8rem', animationDelay: '1s' }}
                     />
                     <MonitorPlay
                       className="cine-icon h-5 w-5 text-white/85"
