@@ -13,6 +13,7 @@ import bookLieche from '@/assets/works/book-lieche.jpg'
 import yizhiBeifenImg from '@/assets/works/yizhi-beifen.jpg'
 import photoLiuweiyuan from '@/assets/photo-liuweiyuan.webp'
 import photoZhangchenrui from '@/assets/photo-zhangchenrui.webp'
+import photoLishangyou from '@/assets/photo-lishangyou.webp'
 
 export interface Division {
   slug: string
@@ -177,6 +178,7 @@ export const artists: Artist[] = [
   {
     name: '李尚由',
     role: '编剧 / 创作质控核心',
+    photo: photoLishangyou,
     desc: '毕业于北卡罗来纳大学教堂山分校传媒学（主攻剧本创作与电影史研究）。获学院推荐赴好莱坞，于奥斯卡获奖制作人 Michael Samsburg（代表作《低俗小说》）旗下编剧团队实习——该资格每年仅一人获得，其为建院以来首位获此资格的非美籍学生。担任野居创作团队的质控核心，主持过超两百小时剧本会。',
     works: ['《芜》三部曲（制片人 / 编剧 / 副导演）', '纪录片《山上山下》（制片人）', '《露西斯星》《黄土之下》（开发中）'],
   },
