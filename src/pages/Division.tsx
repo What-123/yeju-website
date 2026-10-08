@@ -124,53 +124,56 @@ export default function Division() {
         </div>
       </section>
 
-      {/* 东八区：创作团队置顶——艺术家与作品是东八区最重要的内容 */}
+      {/* 东八区：关于居民置顶——艺术家与作品是东八区最重要的内容（参考 yejumovie 画廊式编排） */}
       {division.slug === 'film' && (
         <section className="mx-auto max-w-6xl px-6 pt-20">
           <div className="flex items-end justify-between">
-            <div>
-              <h2 className="float-text font-serif text-3xl font-bold tracking-wide">创作团队</h2>
-              <p className="mt-3 max-w-xl text-sm leading-6 text-[#e8e2d5]/50">
-                东八区最重要的资产，是这些持续创作的人——艺术家与他们的作品，永远排在最前。
-              </p>
-            </div>
-            <span className="label-gold">Artists</span>
+            <h2 className="float-text font-serif text-3xl font-bold tracking-wide">关于居民</h2>
+            <span className="label-gold">Residents</span>
           </div>
-          <div className="mt-10 border-t border-[#b89b5e]/20">
-            {artists.map((a, i) => (
-              <div
-                key={a.name}
-                className="group relative grid grid-cols-12 items-start gap-8 border-b border-[#b89b5e]/20 px-4 py-10 transition-colors duration-300 hover:bg-[#b89b5e]/5"
-              >
-                <span className="font-latin col-span-1 pt-3 text-xl italic text-[#b89b5e]/50">
-                  {String(i + 1).padStart(2, '0')}
-                </span>
-                {/* 首字印章 */}
-                <div className="col-span-2">
-                  <div className="flex h-24 w-24 items-center justify-center bg-gradient-to-br from-[#16140f] to-[#2a2620] font-serif text-4xl font-bold text-[#e8c987] ring-1 ring-[#b89b5e]/40 transition-shadow duration-300 group-hover:shadow-[0_0_35px_rgba(184,155,94,0.25)]">
-                    {a.name.charAt(0)}
-                  </div>
-                </div>
-                <div className="col-span-9">
-                  <div className="flex flex-wrap items-baseline gap-x-5 gap-y-1">
-                    <h3 className="float-text font-serif text-3xl font-black tracking-[0.15em] text-[#e8c987]">
+          <div className="mt-14 space-y-24">
+            {artists.map((a, i) => {
+              const wide = i % 2 === 0
+              return (
+                <div key={a.name} className="grid grid-cols-12 items-end gap-10">
+                  {/* 照片（黑白）+ 斜体名字 */}
+                  <div className={wide ? 'col-span-7' : 'col-span-5'}>
+                    {a.photo ? (
+                      <img
+                        src={a.photo}
+                        alt={a.name}
+                        className="w-full grayscale transition-all duration-500 hover:grayscale-0"
+                      />
+                    ) : (
+                      <div className="flex aspect-[4/5] w-full items-center justify-center bg-[#16140f]">
+                        <span className="font-serif text-xl tracking-[0.3em] text-[#b89b5e]/35">
+                          照片待定
+                        </span>
+                      </div>
+                    )}
+                    <p className="font-latin float-text mt-5 font-serif text-2xl italic tracking-[0.1em] text-[#e8c987]">
                       {a.name}
-                    </h3>
+                    </p>
                     {a.role && (
-                      <span className="text-xs tracking-[0.35em] text-white/40">{a.role}</span>
+                      <p className="mt-1.5 text-xs tracking-[0.35em] text-white/35">{a.role}</p>
                     )}
                   </div>
-                  {a.desc && (
-                    <p className="mt-4 max-w-3xl text-sm leading-7 text-[#e8e2d5]/65">{a.desc}</p>
-                  )}
-                  {a.works.length > 0 && (
-                    <p className="mt-4 text-xs tracking-[0.15em] text-[#b89b5e]/70">
-                      代表作 · {a.works.join(' / ')}
-                    </p>
-                  )}
+                  {/* 文字直接落在底色上 */}
+                  <div className={wide ? 'col-span-5' : 'col-span-7'}>
+                    {a.desc ? (
+                      <p className="text-sm leading-8 text-[#e8e2d5]/65">{a.desc}</p>
+                    ) : (
+                      <p className="text-sm leading-8 text-[#e8e2d5]/30">资料待定</p>
+                    )}
+                    {a.works.length > 0 && (
+                      <p className="mt-6 text-xs leading-6 tracking-[0.1em] text-[#b89b5e]/60">
+                        {a.works.join('　·　')}
+                      </p>
+                    )}
+                  </div>
                 </div>
-              </div>
-            ))}
+              )
+            })}
           </div>
         </section>
       )}

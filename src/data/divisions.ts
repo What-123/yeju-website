@@ -160,6 +160,7 @@ export interface Artist {
   role: string
   desc: string
   works: string[]
+  photo?: string
 }
 
 // 东八区 · 创作团队（资料来源：野居电影工作室官网 yejumovie.com）
